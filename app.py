@@ -118,7 +118,7 @@ def excel_para_download(df: pd.DataFrame) -> bytes:
     return saida.getvalue()
 
 
-st.title("📦 Indicador de Atendimento de OVs nos EAs")
+st.title("📦 Indicador de Atendimento de OVs nos TLs")
 st.caption("Monitoramento dos pedidos atendidos por prazo e dos pedidos ainda em atendimento.")
 
 CAMINHO_BASE = Path(__file__).resolve().parent / NOME_ARQUIVO_PADRAO
