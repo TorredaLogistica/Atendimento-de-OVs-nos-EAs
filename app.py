@@ -264,13 +264,15 @@ if data_pedido_filtro is not None and visualizacao == "📅 Visão Diária":
 
 # Evolução mensal acumulada, usando como término o mês selecionado.
 if visualizacao == "📊 Evolução Mensal":
-    with st.sidebar:
-        periodo_acumulado = st.radio(
-            "Período acumulado (meses)",
-            options=[3, 6, 9, 12, 24],
-            index=3,
-            horizontal=True,
-        )
+    # Seletor exibido na área principal, acima dos indicadores consolidados.
+    periodo_acumulado = st.radio(
+        "Período Acumulado:",
+        options=[3, 6, 9, 12],
+        index=3,
+        horizontal=True,
+        key="periodo_acumulado_evolucao",
+        help="Selecione a quantidade de meses considerada na evolução mensal.",
+    )
 
     inicio_periodo = periodo_referencia - (periodo_acumulado - 1)
     base_evolucao = base_filtrada[
